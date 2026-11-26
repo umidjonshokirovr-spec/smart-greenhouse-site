@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SMART GREENHOUSE | Aqlli issiqxona</title>
+<style>
+:root{--ink:#172b25;--muted:#718078;--green:#19764b;--green2:#239764;--mint:#e8f5ed;--bg:#f4f7f4;--line:#e6ece7;--white:#fff;--gold:#e7ae48;--shadow:0 12px 34px rgba(22,48,34,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}button{font:inherit;cursor:pointer;border:0}.shell{max-width:1320px;margin:auto;padding:26px 28px 40px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:24px}.brand{display:flex;align-items:center;gap:13px}.logo{width:46px;height:46px;border-radius:15px;background:linear-gradient(145deg,#1e8656,#125d3c);display:grid;place-items:center;color:#fff;font-size:24px;box-shadow:0 8px 18px #19764b33}.brand h1{font-size:20px;letter-spacing:.7px;margin:0;font-weight:850}.brand p{margin:2px 0 0;color:var(--muted);font-size:12px}.top-right{display:flex;align-items:center;gap:10px}.demo-tag{background:#fff5df;color:#8c641a;border:1px solid #f3e2bb;padding:8px 12px;border-radius:30px;font-size:11px;font-weight:800;letter-spacing:.3px}.clock{color:var(--muted);font-size:12px}.lock-btn{background:#eef3ef;color:#2d4938;border:1px solid var(--line);padding:8px 11px;border-radius:10px;font-size:11px;font-weight:800}.gate{position:fixed;inset:0;z-index:99;background:rgba(9,28,19,.78);backdrop-filter:blur(7px);display:grid;place-items:center;padding:18px}.gate-card{width:min(410px,100%);background:#fff;border-radius:20px;padding:26px;box-shadow:0 24px 80px #0004}.gate-icon{width:48px;height:48px;border-radius:15px;background:#e8f5ed;display:grid;place-items:center;font-size:24px;margin-bottom:14px}.gate-card h2{margin:0 0 6px;font-size:21px}.gate-card p{margin:0 0 18px;color:var(--muted);font-size:12px}.gate-card input{width:100%;padding:12px 13px;border:1px solid #dce5dd;border-radius:10px;font:inherit;margin:0 0 10px;outline-color:#239764}.gate-card .btn{width:100%;padding:12px}.gate-error{color:#b33b32;font-size:11px;min-height:18px;margin:2px 0 8px}.gate-note{font-size:10px;color:#89958d;margin-top:13px;line-height:1.5}.hidden{display:none!important}.welcome{background:linear-gradient(115deg,#123f2d,#19764b 66%,#2d9664);color:#fff;border-radius:22px;padding:26px 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;overflow:hidden;position:relative;box-shadow:var(--shadow)}.welcome:after{content:'🌿';position:absolute;right:23%;top:-34px;font-size:150px;opacity:.09;transform:rotate(-18deg)}.welcome h2{font-size:24px;margin:0 0 5px;position:relative;z-index:1}.welcome p{margin:0;color:#d6eee0;font-size:13px;position:relative;z-index:1}.welcome-side{position:relative;z-index:1;text-align:right}.welcome-side strong{display:block;font-size:25px}.welcome-side span{font-size:11px;color:#d6eee0}.notice{margin:16px 0;background:#fff9eb;border:1px solid #f1e1bc;color:#80601e;border-radius:12px;padding:11px 14px;font-size:12px}.section-title{display:flex;justify-content:space-between;align-items:end;margin:25px 2px 12px}.section-title h3{margin:0;font-size:16px}.section-title span{font-size:11px;color:var(--muted)}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{background:var(--white);border:1px solid var(--line);border-radius:17px;padding:18px;box-shadow:var(--shadow)}.metric-head{display:flex;justify-content:space-between;align-items:center}.metric-label{font-size:12px;color:var(--muted);font-weight:650}.metric-icon{width:37px;height:37px;border-radius:12px;background:var(--mint);display:grid;place-items:center;font-size:18px}.metric-value{font-size:30px;font-weight:800;letter-spacing:-1px;margin:12px 0 2px}.metric-value small{font-size:14px;color:var(--muted);font-weight:650;letter-spacing:0}.metric-foot{font-size:11px;color:var(--muted)}.bar{height:6px;border-radius:8px;background:#edf1ed;margin-top:13px;overflow:hidden}.bar i{height:100%;display:block;border-radius:8px;background:linear-gradient(90deg,#2d9b67,#74c99a)}.layout{display:grid;grid-template-columns:1.55fr 1fr;gap:14px;margin-top:14px}.card-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.card-title h3{font-size:14px;margin:0}.tiny-tag{font-size:10px;padding:5px 8px;border-radius:20px;background:#eef6f0;color:#28744b;font-weight:750}.chartbox{height:230px}.chartbox canvas{width:100%;height:100%}.legend{font-size:11px;color:var(--muted);margin-top:5px}.status-list{display:grid;gap:13px}.status-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-bottom:12px;border-bottom:1px solid var(--line);font-size:12px}.status-row:last-child{border:0;padding:0}.status-row span:first-child{color:var(--muted)}.state{font-size:10px;font-weight:800;padding:5px 9px;border-radius:20px;background:#fff4df;color:#946617}.state.good{background:#eaf6ee;color:#267449}.divider{height:1px;background:var(--line);margin:17px 0}.valve{display:flex;align-items:center;justify-content:space-between;gap:10px}.valve strong{font-size:13px}.valve small{display:block;color:var(--muted);font-size:11px;margin-top:2px}.btn{border-radius:10px;background:var(--green);color:#fff;padding:10px 13px;font-size:11px;font-weight:800;box-shadow:0 5px 12px #19764b24}.btn:hover{background:#125d3c}.btn.alt{background:#eef3ef;color:#2d4938;box-shadow:none}.lower{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.event-list{list-style:none;margin:0;padding:0;display:grid;gap:11px}.event-list li{display:flex;gap:10px;align-items:flex-start;font-size:11px;color:#47564d}.event-dot{width:8px;height:8px;background:#4ba879;border-radius:50%;margin-top:4px;flex:none}.event-list time{color:#99a39c;font-size:10px;display:block;margin-top:2px}.quick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.quick{padding:12px;border-radius:12px;background:#f7faf7;border:1px solid var(--line)}.quick b{display:block;font-size:12px}.quick span{font-size:10px;color:var(--muted)}footer{text-align:center;color:#98a39b;font-size:10px;padding:25px 0 0}
+@media(max-width:900px){.metrics{grid-template-columns:repeat(2,1fr)}.layout,.lower{grid-template-columns:1fr}}@media(max-width:540px){.shell{padding:17px 13px 28px}.topbar{align-items:flex-start}.top-right{flex-direction:column;align-items:flex-end}.welcome{padding:21px 18px}.welcome h2{font-size:19px}.welcome-side strong{font-size:20px}.metrics{gap:9px}.card{padding:14px}.metric-value{font-size:25px}.clock{display:none}}
+</style></head>
+<body>
+<div class="gate hidden" id="valveGate" role="dialog" aria-modal="true" aria-labelledby="valveGateTitle">
+  <div class="gate-card">
+    <div class="gate-icon">🔐</div>
+    <h2 id="valveGateTitle">Jo‘mrak boshqaruvi</h2>
+    <p id="valveGateText">Jo‘mrakni boshqarish uchun maxsus kodni kiriting.</p>
+    <form id="valveGateForm">
+      <input id="valvePin1" type="password" inputmode="numeric" autocomplete="off" placeholder="Maxsus kod (kamida 4 belgi)" required>
+      <input id="valvePin2" class="hidden" type="password" inputmode="numeric" autocomplete="off" placeholder="Kodni qayta kiriting">
+      <div class="gate-error" id="valveGateError"></div>
+      <button class="btn" id="valveGateSubmit" type="submit">Tasdiqlash</button>
+      <button class="btn alt" type="button" style="width:100%;margin-top:8px" onclick="closeValveGate()">Bekor qilish</button>
+    </form>
+    <div class="gate-note">Saytning qolgan qismi hammaga ochiq. Kod faqat jo‘mrakni ochish yoki yopishda so‘raladi.</div>
+  </div>
+</div>
+<div class="shell" id="app">
+<header class="topbar"><div class="brand"><div class="logo">🌱</div><div><h1>SMART GREENHOUSE</h1><p>Aqlli issiqxona boshqaruv paneli</p></div></div><div class="top-right"><span class="clock" id="clock"></span><span class="demo-tag">● DEMO REJIMI</span></div></header>
+<section class="welcome"><div><h2>Issiqxonangiz nazorat ostida</h2><p>145 m² maydon · Sensorlar, suv nazorati va sug‘orish boshqaruvi</p></div><div class="welcome-side"><strong>145 m²</strong><span>UMUMIY MAYDON</span></div></section>
+<div class="notice"><b>Demo ma’lumotlar.</b> Ko‘rsatkichlar namoyish uchun simulyatsiya qilinadi. ESP32 ulangach, haqiqiy sensor ma’lumotlari ko‘rsatiladi. Sayt hammaga ochiq; jo‘mrak tugmasi maxsus kod bilan himoyalangan. Hozircha tugma faqat demo holatini o‘zgartiradi.</div>
+<div class="section-title"><h3>Asosiy ko‘rsatkichlar</h3><span>Oxirgi yangilanish: <b id="updated">hozir</b></span></div>
+<section class="metrics">
+<div class="card"><div class="metric-head"><span class="metric-label">Tuproq namligi</span><span class="metric-icon">💧</span></div><div class="metric-value"><span id="soil">68</span><small> %</small></div><div class="metric-foot">Demo o‘rtacha ko‘rsatkich</div><div class="bar"><i id="soilbar" style="width:68%"></i></div></div>
+<div class="card"><div class="metric-head"><span class="metric-label">Havo harorati</span><span class="metric-icon">🌡️</span></div><div class="metric-value"><span id="temp">26.4</span><small> °C</small></div><div class="metric-foot">Issiqxona ichidagi harorat</div><div class="bar"><i style="width:66%"></i></div></div>
+<div class="card"><div class="metric-head"><span class="metric-label">Havo namligi</span><span class="metric-icon">☁️</span></div><div class="metric-value"><span id="hum">61</span><small> %</small></div><div class="metric-foot">Nisbiy namlik</div><div class="bar"><i id="humbar" style="width:61%"></i></div></div>
+<div class="card"><div class="metric-head"><span class="metric-label">Bochka suv sathi</span><span class="metric-icon">🛢️</span></div><div class="metric-value"><span id="tank">75</span><small> %</small></div><div class="metric-foot">500 litrli suv bochkasi</div><div class="bar"><i id="tankbar" style="width:75%"></i></div></div>
+</section>
+<section class="layout"><div class="card"><div class="card-title"><h3>Tuproq namligi dinamikasi</h3><span class="tiny-tag">SO‘NGGI O‘LCHOVLAR</span></div><div class="chartbox"><canvas id="chart" width="850" height="300"></canvas></div><div class="legend">Namlik darajasi · foiz (%) · namunaviy demo grafik</div></div>
+<div class="card"><div class="card-title"><h3>Suv tizimi</h3><span class="tiny-tag">MONITORING</span></div><div class="status-list"><div class="status-row"><span>Bugungi suv sarfi</span><b><span id="used">42</span> litr</b></div><div class="status-row"><span>Joriy suv oqimi</span><b><span id="flow">0.0</span> L/min</b></div><div class="status-row"><span>ESP32 qurilmasi</span><span class="state">Ulanmagan</span></div><div class="status-row"><span>Sensorlar</span><span class="state">Demo simulyatsiya</span></div></div><div class="divider"></div><div class="valve"><div><strong>Asosiy jo‘mrak</strong><small id="vstate">Yopiq · demo holati</small></div><button class="btn" id="vbtn" onclick="confirmValve()">Jo‘mrakni ochish</button></div></div></section>
+<section class="lower"><div class="card"><div class="card-title"><h3>So‘nggi hodisalar</h3><button class="btn alt" onclick="refresh()">Yangilash ↻</button></div><ul class="event-list" id="events"><li><i class="event-dot"></i><div>Dashboard ishga tushdi<time>Demo rejimi</time></div></li><li><i class="event-dot"></i><div>Sensor qiymatlari yuklandi<time>Simulyatsiya</time></div></li></ul></div><div class="card"><div class="card-title"><h3>Tizim imkoniyatlari</h3><span class="tiny-tag">LOYIHA</span></div><div class="quick-grid"><div class="quick"><b>📊 Grafiklar</b><span>Namlik tarixini ko‘rish</span></div><div class="quick"><b>💦 Suv nazorati</b><span>Sath va sarf monitoringi</span></div><div class="quick"><b>⚙️ Avtomatika</b><span>Jo‘mrakni boshqarish</span></div><div class="quick"><b>📱 Telegram</b><span>Ogohlantirishlar va buyruqlar</span></div></div></div></section>
+<footer>SMART GREENHOUSE · 145 m² · Demo dashboard · ESP32 integratsiyasi keyingi bosqichda</footer></div>
+<script>
+let hist=[54,57,56,61,59,64,66,68],opened=false,pendingValveAction=false;
+const PIN_KEY='smart_greenhouse_valve_pin_v1';
+async function hashPin(v){
+  const data=new TextEncoder().encode(v);
+  const digest=await crypto.subtle.digest('SHA-256',data);
+  return Array.from(new Uint8Array(digest)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+function showValveGate(){
+  const exists=localStorage.getItem(PIN_KEY);
+  document.getElementById('valveGateTitle').textContent=exists?'Jo‘mrak uchun kod':'Jo‘mrak kodini yarating';
+  document.getElementById('valveGateText').textContent=exists?'Jo‘mrakni ochish yoki yopish uchun maxsus kodni kiriting.':'Faqat jo‘mrakni boshqarishda ishlatiladigan maxsus kod belgilang.';
+  document.getElementById('valvePin2').classList.toggle('hidden',!!exists);
+  document.getElementById('valveGateSubmit').textContent=exists?'Davom etish':'Kodni saqlash';
+  document.getElementById('valveGateError').textContent='';
+  document.getElementById('valvePin1').value='';
+  document.getElementById('valvePin2').value='';
+  document.getElementById('valveGate').classList.remove('hidden');
+  document.getElementById('valvePin1').focus();
+}
+function closeValveGate(){
+  document.getElementById('valveGate').classList.add('hidden');
+  pendingValveAction=false;
+}
+document.getElementById('valveGateForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const pin=document.getElementById('valvePin1').value;
+  const again=document.getElementById('valvePin2').value;
+  const err=document.getElementById('valveGateError');
+  const saved=localStorage.getItem(PIN_KEY);
+  err.textContent='';
+  if(pin.length<4){err.textContent='Kod kamida 4 belgidan iborat bo‘lsin.';return;}
+  if(!saved){
+    if(pin!==again){err.textContent='Kiritilgan kodlar bir xil emas.';return;}
+    localStorage.setItem(PIN_KEY,await hashPin(pin));
+  }else if(await hashPin(pin)!==saved){
+    err.textContent='Kod noto‘g‘ri. Qayta urinib ko‘ring.';
+    document.getElementById('valvePin1').value='';
+    return;
+  }
+  document.getElementById('valveGate').classList.add('hidden');
+  if(pendingValveAction){pendingValveAction=false;performValveToggle();}
+});
+function confirmValve(){
+  if(!opened&&!confirm('Jo‘mrakni ochishga ishonchingiz komilmi?'))return;
+  pendingValveAction=true;
+  showValveGate();
+}
+function draw(){let c=document.getElementById('chart'),x=c.getContext('2d'),w=c.width,h=c.height;x.clearRect(0,0,w,h);let l=45,r=16,t=15,b=28;x.font='13px Arial';for(let n=0;n<=100;n+=20){let y=t+(h-t-b)*(1-n/100);x.strokeStyle='#edf1ed';x.lineWidth=1;x.beginPath();x.moveTo(l,y);x.lineTo(w-r,y);x.stroke();x.fillStyle='#849087';x.fillText(n+'%',4,y+4)}let px=i=>l+i*(w-l-r)/(hist.length-1),py=v=>t+(h-t-b)*(1-v/100);let grad=x.createLinearGradient(0,t,0,h);grad.addColorStop(0,'rgba(35,151,100,.22)');grad.addColorStop(1,'rgba(35,151,100,0)');x.beginPath();hist.forEach((v,i)=>i?x.lineTo(px(i),py(v)):x.moveTo(px(i),py(v)));x.lineTo(px(hist.length-1),h-b);x.lineTo(px(0),h-b);x.closePath();x.fillStyle=grad;x.fill();x.beginPath();hist.forEach((v,i)=>i?x.lineTo(px(i),py(v)):x.moveTo(px(i),py(v)));x.strokeStyle='#239764';x.lineWidth=4;x.lineJoin='round';x.stroke();hist.forEach((v,i)=>{x.beginPath();x.arc(px(i),py(v),5,0,7);x.fillStyle='#fff';x.fill();x.strokeStyle='#239764';x.lineWidth=3;x.stroke()})}
+function event(msg){let li=document.createElement('li'),dot=document.createElement('i'),box=document.createElement('div'),tm=document.createElement('time');dot.className='event-dot';box.textContent=msg;tm.textContent=new Date().toLocaleTimeString('uz-UZ')+' · demo';box.appendChild(tm);li.append(dot,box);document.getElementById('events').prepend(li)}
+function refresh(){let s=Math.round(55+Math.random()*25),h=Math.round(50+Math.random()*25),t=(24+Math.random()*5).toFixed(1),tank=Math.round(65+Math.random()*25);document.getElementById('soil').textContent=s;document.getElementById('temp').textContent=t;document.getElementById('hum').textContent=h;document.getElementById('tank').textContent=tank;document.getElementById('soilbar').style.width=s+'%';document.getElementById('humbar').style.width=h+'%';document.getElementById('tankbar').style.width=tank+'%';hist.push(s);if(hist.length>8)hist.shift();draw();document.getElementById('updated').textContent='hozir';event('Demo ko‘rsatkichlari yangilandi')}
+function performValveToggle(){opened=!opened;document.getElementById('vstate').textContent=opened?'Ochiq · demo holati':'Yopiq · demo holati';document.getElementById('vbtn').textContent=opened?'Jo‘mrakni yopish':'Jo‘mrakni ochish';document.getElementById('vbtn').style.background=opened?'#a65a20':'';document.getElementById('flow').textContent=opened?(1+Math.random()*2).toFixed(1):'0.0';if(opened)document.getElementById('used').textContent=+document.getElementById('used').textContent+1;event(opened?'Demo jo‘mrak ochildi':'Demo jo‘mrak yopildi')}
+function tick(){document.getElementById('clock').textContent=new Date().toLocaleString('uz-UZ',{weekday:'short',hour:'2-digit',minute:'2-digit'})}tick();setInterval(tick,30000);draw();
+</script></body></html>
