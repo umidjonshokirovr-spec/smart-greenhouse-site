@@ -4,47 +4,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#123f2d">
 <title>SMART GREENHOUSE | Aqlli issiqxona</title>
 
 <style>
 :root {
-  --green:#126b45;
-  --green2:#239764;
-  --dark:#123f2d;
-  --bg:#f5f7f6;
-  --ink:#172b25;
-  --muted:#718078;
-  --line:#e7ece9;
-  --white:#fff;
-  --shadow:0 5px 22px rgba(16,40,28,.05);
+  --primary:#176b45;
+  --primary-dark:#104b32;
+  --accent:#28a36a;
+  --background:#f4f7f5;
+  --surface:#ffffff;
+  --text:#172b25;
+  --muted:#7b8981;
+  --border:#e5ece7;
+  --shadow:0 5px 22px rgba(20,50,33,.055);
 }
 *{box-sizing:border-box}
 body{
-  margin:0;background:var(--bg);color:var(--ink);
-  font:14px/1.6 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif
+  margin:0;
+  background:var(--background);
+  color:var(--text);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  font-size:14px;
+  line-height:1.6;
 }
-button{font:inherit;cursor:pointer;border:0}
+button,input{font:inherit}
+button{cursor:pointer}
 .shell{max-width:1440px;margin:auto;padding:30px 38px 45px}
-.topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:28px}
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;margin-bottom:28px
+}
 .brand{display:flex;align-items:center;gap:13px}
 .logo{
   width:49px;height:49px;border-radius:14px;
-  background:var(--green);display:grid;place-items:center;
-  color:white;font-size:24px;box-shadow:0 5px 15px #126b4525
+  background:linear-gradient(145deg,#239764,#105b3b);
+  display:grid;place-items:center;color:white;font-size:24px;
+  box-shadow:0 6px 15px #176b4525
 }
 .brand h1{font-size:20px;letter-spacing:1px;margin:0;font-weight:850}
 .brand p{margin:2px 0 0;color:var(--muted);font-size:12px}
 .top-right{display:flex;align-items:center;gap:12px}
 .clock{font-size:12px;color:var(--muted)}
 .demo-tag{
-  background:#fff7e8;color:#91681d;border:1px solid #f0e1c1;
-  padding:8px 13px;border-radius:30px;font-size:10px;font-weight:800
+  padding:8px 13px;border-radius:30px;
+  background:#fff7e8;color:#91681d;
+  border:1px solid #f0e1c1;font-size:10px;font-weight:800
 }
 .welcome{
-  background:linear-gradient(110deg,#103b2a,#16784b 65%,#239764);
-  color:white;border-radius:18px;padding:32px 36px;min-height:155px;
+  min-height:160px;padding:32px 36px;
   display:flex;align-items:center;justify-content:space-between;
   gap:20px;position:relative;overflow:hidden;
+  color:white;border-radius:18px;
+  background:linear-gradient(110deg,#103b2a,#176b45 65%,#2b9b68);
   box-shadow:0 12px 28px rgba(15,63,42,.12)
 }
 .welcome:after{
@@ -54,57 +66,75 @@ button{font:inherit;cursor:pointer;border:0}
 .welcome h2{font-size:26px;margin:0 0 7px;position:relative;z-index:1}
 .welcome p{margin:0;color:#d7eee0;font-size:13px;position:relative;z-index:1}
 .welcome-side{text-align:right;position:relative;z-index:1}
-.welcome-side strong{display:block;font-size:30px}
+.welcome-side strong{display:block;font-size:31px}
 .welcome-side span{font-size:10px;letter-spacing:1px;color:#d7eee0}
 .notice{
-  margin:18px 0;background:#fff9eb;border:1px solid #f0e2c1;
-  color:#80601e;border-radius:11px;padding:12px 15px;font-size:11px;line-height:1.7
+  margin:18px 0;padding:13px 16px;
+  border-radius:11px;background:#fff9eb;
+  border:1px solid #f0e2c1;color:#80601e;
+  font-size:11px;line-height:1.7
 }
-.section-title{display:flex;justify-content:space-between;align-items:end;margin:28px 2px 13px}
+.section-title{
+  display:flex;justify-content:space-between;align-items:end;
+  margin:28px 2px 13px
+}
 .section-title h3{margin:0;font-size:16px;font-weight:800}
 .section-title span{font-size:11px;color:var(--muted)}
 .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
 .card{
-  background:white;border:1px solid var(--line);border-radius:16px;
-  padding:20px;box-shadow:var(--shadow);transition:.2s
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:16px;padding:20px;box-shadow:var(--shadow);
+  transition:transform .2s,box-shadow .2s
 }
 .card:hover{transform:translateY(-2px);box-shadow:0 12px 28px #10281c12}
 .metric-head{display:flex;justify-content:space-between;align-items:center}
 .metric-label{font-size:12px;color:var(--muted);font-weight:650}
 .metric-icon{
-  width:40px;height:40px;border-radius:12px;background:#eaf4ed;
-  display:grid;place-items:center;font-size:19px
+  width:40px;height:40px;border-radius:12px;
+  background:#eaf4ed;display:grid;place-items:center;font-size:19px
 }
 .metric-value{font-size:33px;font-weight:850;letter-spacing:-1px;margin:13px 0 2px}
 .metric-value small{font-size:13px;color:var(--muted);font-weight:650}
 .metric-foot{font-size:10px;color:var(--muted)}
 .bar{height:6px;background:#edf1ee;border-radius:8px;margin-top:13px;overflow:hidden}
-.bar i{height:100%;display:block;border-radius:8px;background:linear-gradient(90deg,#239764,#72c79a)}
+.bar i{
+  height:100%;display:block;border-radius:8px;
+  background:linear-gradient(90deg,#239764,#72c79a)
+}
 .layout{display:grid;grid-template-columns:1.55fr 1fr;gap:15px;margin-top:15px}
 .card-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}
 .card-title h3{font-size:14px;margin:0;font-weight:800}
-.tiny-tag{font-size:9px;padding:6px 9px;border-radius:6px;background:#edf5ef;color:#28744b;font-weight:800}
+.tiny-tag{
+  font-size:9px;padding:6px 9px;border-radius:6px;
+  background:#edf5ef;color:#28744b;font-weight:800;letter-spacing:.4px
+}
 .chartbox{height:230px}
 .chartbox canvas{width:100%;height:100%}
 .legend{font-size:10px;color:var(--muted);margin-top:5px}
 .status-list{display:grid;gap:13px}
 .status-row{
-  display:flex;align-items:center;justify-content:space-between;gap:10px;
-  padding-bottom:12px;border-bottom:1px solid #edf0ee;font-size:12px
+  display:flex;align-items:center;justify-content:space-between;
+  gap:10px;padding-bottom:12px;
+  border-bottom:1px solid #edf0ee;font-size:12px
 }
 .status-row:last-child{border:0;padding:0}
 .status-row span:first-child{color:var(--muted)}
-.state{font-size:9px;font-weight:800;padding:5px 9px;border-radius:7px;background:#fff4df;color:#946617}
+.state{
+  font-size:9px;font-weight:800;padding:5px 9px;
+  border-radius:7px;background:#fff4df;color:#946617
+}
 .state.good{background:#eaf6ee;color:#267449}
-.divider{height:1px;background:var(--line);margin:17px 0}
+.divider{height:1px;background:var(--border);margin:17px 0}
 .valve{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .valve strong{font-size:13px}
 .valve small{display:block;color:var(--muted);font-size:10px;margin-top:3px}
 .btn{
-  border-radius:9px;background:var(--green);color:white;
-  padding:10px 14px;font-size:11px;font-weight:800;transition:.2s
+  border:0;border-radius:9px;background:var(--primary);
+  color:white;padding:10px 14px;font-size:11px;font-weight:800;
+  transition:background .2s
 }
-.btn:hover{background:#0d5637}
+.btn:hover{background:var(--primary-dark)}
+.btn:disabled{opacity:.6;cursor:wait}
 .btn.alt{background:#edf3ef;color:#294a37}
 .lower{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:15px}
 .event-list{list-style:none;margin:0;padding:0;display:grid;gap:11px}
@@ -112,29 +142,34 @@ button{font:inherit;cursor:pointer;border:0}
 .event-dot{width:7px;height:7px;background:#239764;border-radius:50%;margin-top:5px;flex:none}
 .event-list time{color:#99a39c;font-size:10px;display:block;margin-top:2px}
 .quick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.quick{padding:13px;border-radius:10px;background:#f8faf8;border:1px solid var(--line)}
+.quick{padding:13px;border-radius:10px;background:#f8faf8;border:1px solid var(--border)}
 .quick b{display:block;font-size:12px}
 .quick span{font-size:10px;color:var(--muted)}
 footer{text-align:center;color:#98a39b;font-size:10px;padding:27px 0 0;line-height:1.8}
 
-/* KOD OYNASI */
+/* JO'MRAK KOD OYNASI */
 .gate{
-  position:fixed;inset:0;z-index:99;background:#091c13c9;
-  backdrop-filter:blur(8px);display:grid;place-items:center;padding:18px
+  position:fixed;inset:0;z-index:99;
+  background:rgba(9,28,19,.78);
+  backdrop-filter:blur(8px);
+  display:grid;place-items:center;padding:18px
 }
 .gate-card{
-  width:min(410px,100%);background:white;border-radius:19px;
-  padding:28px;box-shadow:0 25px 80px #0004
+  width:min(410px,100%);background:white;
+  border-radius:19px;padding:28px;
+  box-shadow:0 25px 80px #0004
 }
 .gate-icon{
-  width:48px;height:48px;border-radius:13px;background:#eaf4ed;
-  display:grid;place-items:center;font-size:23px;margin-bottom:14px
+  width:48px;height:48px;border-radius:13px;
+  background:#eaf4ed;display:grid;place-items:center;
+  font-size:23px;margin-bottom:14px
 }
 .gate-card h2{margin:0 0 6px;font-size:21px}
 .gate-card p{margin:0 0 17px;color:var(--muted);font-size:12px}
 .gate-card input{
   width:100%;padding:13px;border:1px solid #dfe7e2;
-  border-radius:9px;font:inherit;margin-bottom:10px;outline-color:#239764
+  border-radius:9px;font:inherit;margin-bottom:10px;
+  outline-color:#239764
 }
 .gate-error{color:#b33b32;font-size:11px;min-height:18px}
 .gate-note{font-size:10px;color:#89958d;margin-top:13px;line-height:1.5}
@@ -174,10 +209,10 @@ footer{text-align:center;color:#98a39b;font-size:10px;padding:27px 0 0;line-heig
 
 <body>
 
-<div class="gate hidden" id="valveGate" role="dialog" aria-modal="true">
+<div class="gate hidden" id="valveGate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
   <div class="gate-card">
     <div class="gate-icon">🔐</div>
-    <h2>Jo‘mrak boshqaruvi</h2>
+    <h2 id="gateTitle">Jo‘mrak boshqaruvi</h2>
     <p>Jo‘mrakni ochish yoki yopish uchun maxsus kodni kiriting.</p>
     <form id="valveGateForm">
       <input id="valvePin1" type="password" autocomplete="off" placeholder="Maxsus kod" required>
@@ -217,7 +252,8 @@ footer{text-align:center;color:#98a39b;font-size:10px;padding:27px 0 0;line-heig
 </section>
 
 <div class="notice">
-  <b>Demo ma’lumotlar.</b> Ko‘rsatkichlar namoyish uchun simulyatsiya qilinadi.
+  <b>Demo ma’lumotlar.</b>
+  Ko‘rsatkichlar namoyish uchun simulyatsiya qilinadi.
   ESP32 ulangach, haqiqiy sensor ma’lumotlari ko‘rsatiladi.
   Hozircha jo‘mrak tugmasi faqat demo holatini o‘zgartiradi.
 </div>
@@ -234,21 +270,18 @@ footer{text-align:center;color:#98a39b;font-size:10px;padding:27px 0 0;line-heig
     <div class="metric-foot">Demo o‘rtacha ko‘rsatkich</div>
     <div class="bar"><i id="soilbar" style="width:68%"></i></div>
   </div>
-
   <div class="card">
     <div class="metric-head"><span class="metric-label">Havo harorati</span><span class="metric-icon">🌡️</span></div>
     <div class="metric-value"><span id="temp">26.4</span><small> °C</small></div>
     <div class="metric-foot">Issiqxona ichidagi harorat</div>
     <div class="bar"><i style="width:66%"></i></div>
   </div>
-
   <div class="card">
     <div class="metric-head"><span class="metric-label">Havo namligi</span><span class="metric-icon">☁️</span></div>
     <div class="metric-value"><span id="hum">61</span><small> %</small></div>
     <div class="metric-foot">Nisbiy namlik</div>
     <div class="bar"><i id="humbar" style="width:61%"></i></div>
   </div>
-
   <div class="card">
     <div class="metric-head"><span class="metric-label">Bochka suv sathi</span><span class="metric-icon">🛢️</span></div>
     <div class="metric-value"><span id="tank">75</span><small> %</small></div>
@@ -299,7 +332,10 @@ footer{text-align:center;color:#98a39b;font-size:10px;padding:27px 0 0;line-heig
   </div>
 
   <div class="card">
-    <div class="card-title"><h3>Tizim imkoniyatlari</h3><span class="tiny-tag">LOYIHA</span></div>
+    <div class="card-title">
+      <h3>Tizim imkoniyatlari</h3>
+      <span class="tiny-tag">LOYIHA</span>
+    </div>
     <div class="quick-grid">
       <div class="quick"><b>📊 Grafiklar</b><span>Namlik tarixini ko‘rish</span></div>
       <div class="quick"><b>💦 Suv nazorati</b><span>Sath va sarf monitoringi</span></div>
@@ -348,7 +384,6 @@ function closeValveGate(){
 
 document.getElementById('valveGateForm').addEventListener('submit',async function(e){
   e.preventDefault();
-
   const field=document.getElementById('valvePin1');
   const error=document.getElementById('valveGateError');
   const submit=document.getElementById('valveGateSubmit');
@@ -373,7 +408,7 @@ document.getElementById('valveGateForm').addEventListener('submit',async functio
       performValveToggle();
     }
   }catch(err){
-    error.textContent='Tekshirishda xatolik yuz berdi.';
+    error.textContent='Kod tekshiruvida xatolik yuz berdi.';
   }finally{
     submit.disabled=false;
     submit.textContent='Tasdiqlash';
@@ -502,7 +537,9 @@ function performValveToggle(){
 function tick(){
   document.getElementById('clock').textContent=
     new Date().toLocaleString('uz-UZ',{
-      weekday:'short',hour:'2-digit',minute:'2-digit'
+      weekday:'short',
+      hour:'2-digit',
+      minute:'2-digit'
     });
 }
 
